@@ -13,7 +13,6 @@ Acces the services at
 | IsantePLUS   |  http://localhost:8080/openmrs | admin : Admin123 |
 | OpenELIS3 | https://localhost/ |    admin : adminADMIN!| 
 | OpenHIM   |    http://localhost:9000/  |  root@openhim.org : openhim |
-| SHR      | http://localhost:8090/fhir  |   | 
 
 
 ## Instructions 
