@@ -19,3 +19,5 @@ bin-release/
 configs/openelis/logs/oeLogs/*
 configs/openelis/logs/tomcatLogs/*
 .DS_Store
+configs/openelis/properties/TotalSystemConfiguration.properties
+configs/openelis/properties/ChangedSystemConfiguration.properties
