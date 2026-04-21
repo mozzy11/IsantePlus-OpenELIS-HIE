@@ -21,3 +21,6 @@ configs/openelis/logs/tomcatLogs/*
 .DS_Store
 configs/openelis/properties/TotalSystemConfiguration.properties
 configs/openelis/properties/ChangedSystemConfiguration.properties
+configs/openelis/database/data/
+**/*checksum*.properties
+**/*checksums*.properties
