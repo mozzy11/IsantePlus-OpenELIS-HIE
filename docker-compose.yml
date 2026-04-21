@@ -43,7 +43,7 @@ services:
 
     db.openelis.org:
         container_name: openelisglobal-database 
-        image: itechuw/openelis-global-2-database:3.2.1.4
+        image: itechuw/openelis-global-2-database:3.2.1.6
         platform: linux/amd64
         ports:
             - "15432:5432"
@@ -55,7 +55,7 @@ services:
             - DB_SUPERUSER_PASSWORD=${ADMIN_PASSWORD}       
         volumes:
               # preserves the database between containers
-            - oe-db-data:/var/lib/postgresql/data                
+            - ./configs/openelis/database/data:/var/lib/postgresql/data                
         logging: *local-logging    
         healthcheck:
             test: [ "CMD", "pg_isready", "-q", "-d", "clinlims", "-U", "clinlims" ]
@@ -65,7 +65,7 @@ services:
             
     oe.openelis.org:
         container_name: openelisglobal-webapp 
-        image: itechuw/openelis-global-2:develop
+        image: itechuw/openelis-global-2:3.2.1.6
         platform: linux/amd64  
         depends_on:
             - db.openelis.org
@@ -138,7 +138,7 @@ services:
   
         
     frontend.openelis.org:
-        image: itechuw/openelis-global-2-frontend:develop
+        image: itechuw/openelis-global-2-frontend:3.2.1.6
         container_name: openelisglobal-front-end
         platform: linux/amd64
         environment:
@@ -149,7 +149,7 @@ services:
             - oe.openelis.org
 
     proxy:
-        image: itechuw/openelis-global-2-proxy:3.2.1.4
+        image: itechuw/openelis-global-2-proxy:3.2.1.6
         platform: linux/amd64
         container_name: openelisglobal-proxy
         ports:
@@ -232,6 +232,7 @@ services:
         volumes:
             - isanteplus-data:/openmrs/data
             - ./configs/isanteplus/custom_modules:/custom_modules
+            - ./configs/isanteplus/concepts_update:/openmrs/concepts_update
 
     #OpenHIM -IOL
     mongo:
